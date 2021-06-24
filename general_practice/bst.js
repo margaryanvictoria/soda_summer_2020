@@ -76,30 +76,36 @@ class TreeNode {
 
 const numTree = [-15, 3, 4, 10, 6, 20, 14, -4, -6, 11, 0, 1];
 
-const people = [
+const friends = [
     {
         fName: "Evelina",
-        lInitial: "B"
+        lInitial: "B",
+        age: 12
     },
     {
         fName: "Kevin",
-        lInitial: "P"
+        lInitial: "P",
+        age: 24
     },
     {
         fName: "Mike",
-        lInitial: "L"
+        lInitial: "L",
+        age: 56
     },
     {
         fName: "Roman",
-        lInitial: "Y"
+        lInitial: "Y",
+        age: 14
     },
     {
         fName: "Dat",
-        lInitial: "H"
+        lInitial: "H",
+        age: 34
     },
     {
         fName: "Austin",
-        lInitial: "W"
+        lInitial: "W",
+        age: 50
     }    
 ];
 
@@ -111,3 +117,18 @@ tree.print();
 
 // children(N[i]) = N[2i+1], N[2i+2]
 // literal tree is less efficient than an already-sorted array + binary search?
+
+//predicate practice
+const sortFriendsByAge = (a, b) => {
+    if (a.age < b.age) {
+        return -1;
+    }
+
+    if (a.age > b.age) {
+        return 1;
+    }
+
+    return 0;
+}
+
+console.log(friends.sort(sortFriendsByAge))
