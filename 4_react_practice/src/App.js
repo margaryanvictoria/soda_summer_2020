@@ -40,23 +40,22 @@ function App() {
   const [data, setData] = React.useState([]);
 
   return (
-    <div style={{textAlign:'center'}}>
-      <button style={{width:"100px", height:"50px"}} onClick={()=>{
-        setCompState(0);
-        setData(movies)
-      }}>Movies</button>
-      <button style={{width:"100px", height:"50px"}} onClick={()=>{
-        setCompState(1);
-        setData()
-      }}>ShoppingCart</button>
-      <button style={{width:"100px", height:"50px"}} onClick={()=>{
-        setCompState(-1);
-      }}>Clear</button>
+    <>
+      <div style={{textAlign:'center'}}>
+        <button style={{width:"100px", height:"50px"}} onClick={()=>{
+          setCompState(0);
+          setData(movies)
+        }}>Movies</button>
+        <button style={{width:"100px", height:"50px"}} onClick={()=>{
+          setCompState(1);
+          setData()
+        }}>ShoppingCart</button>
+        <button style={{width:"100px", height:"50px"}} onClick={()=>{
+          setCompState(-1);
+        }}>Clear</button>
+      </div>
       <RenderComponent comp={compState} data={data}/>
-      {/* <ShoppingCart />
-      <div>.</div>
-      <Movies movies={movies} /> */}
-    </div>
+    </>
   );
 }
 

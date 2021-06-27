@@ -6,8 +6,10 @@ export default function Movies(props) {
     const value = state[0];
     const setState = state[1]; */
     
+    //console.log(props)
+
     // ES6 Array Destructuring
-    const [movies, setMovies] = React.useState(props.data.movies);
+    const [movies, setMovies] = React.useState(props.movies);
 
     return (
         <div>
@@ -19,7 +21,7 @@ export default function Movies(props) {
                 Delete
             </button>
             <button onClick={()=>{
-                setMovies(props.data.movies)
+                setMovies(props.movies)
             }}>
                 Restore
             </button>
