@@ -1,11 +1,12 @@
 import React from 'react';
 import OpenWeatherMap from './components/OpenWeatherMap'
+import privateData from './data/private'
 
 function App() {
   const [currentWeather, setCurrentWeather] = React.useState(null);
   
   React.useEffect(() => {
-    const openWeatherMap = new OpenWeatherMap("70e65c74d11f3c6e1b136bfd6b4944cb");
+    const openWeatherMap = new OpenWeatherMap(privateData.key);
 
     (async () => {
         const result = await openWeatherMap.currentWeather("Sacramento");
